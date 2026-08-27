@@ -81,3 +81,7 @@ The backup contains the executable, profile when present, and each Steam VDF fil
 Steam's "Verify integrity of game files" replaces the patched executable. Run `./restore.sh` again afterward.
 
 The patch matches Kopanito v1.0.7's minified JavaScript exactly. It stops with an error instead of guessing if a future game build changes that code.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
