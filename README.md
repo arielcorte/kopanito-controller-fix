@@ -8,7 +8,7 @@ It contains patching code only. It does not contain Kopanito binaries, assets, p
 
 | Input problem | Correction |
 | --- | --- |
-| Kopanito sees two raw pads and two Steam virtual pads | Ignore the raw GameSir devices and reindex the two Steam Xbox pads |
+| Kopanito sees two raw pads and two Steam virtual pads | Ignore the raw GameSir devices (USB vendor `3537`, product `1041`, over Bluetooth or USB) and reindex the two Steam Xbox pads |
 | Start does not activate either player | Assign the virtual pads to Kopanito controller slots 1 and 2 |
 | A/B and X/Y are reversed on one controller | Disable Steam's reversed button-diamond preference for matching GameSir devices |
 | LT appears as right-stick input | Map LT from Linux axis 2 |

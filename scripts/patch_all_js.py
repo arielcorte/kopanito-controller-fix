@@ -21,8 +21,11 @@ PATCHES = (
         (
             'function o(e,t){for(var n,r=0;r<e.length;r++)if(n=e[r]){var a=s(n);a?(_(n),a.lastChecked=t):(n=_(n),n.lastChecked=t,',
             'function o(e,t){for(var n,r=0;r<e.length;r++)if(n=e[r]){var a=s(n);n=_(n),a?a.lastChecked=t:(n.lastChecked=t,',
+            # First version of this patch: missed GameSir pads on USB, which report
+            # as "Zikway HID gamepad", and wrote to read-only native Gamepad.index.
+            'function o(e,t){for(var n,r=0,u=0;r<e.length;r++)if(n=e[r],n&&"string"==typeof n.id&&-1!==n.id.indexOf("GameSir-Nova Lite"))continue;else if(n){var a=s(n);n=_(n),n.index=u++,a?a.lastChecked=t:(n.lastChecked=t,',
         ),
-        'function o(e,t){for(var n,r=0,u=0;r<e.length;r++)if(n=e[r],n&&"string"==typeof n.id&&-1!==n.id.indexOf("GameSir-Nova Lite"))continue;else if(n){var a=s(n);n=_(n),n.index=u++,a?a.lastChecked=t:(n.lastChecked=t,',
+        'function o(e,t){for(var n,r=0,u=0;r<e.length;r++)if(n=e[r],n&&"string"==typeof n.id&&(-1!==n.id.indexOf("Vendor: 3537 Product: 1041")||-1!==n.id.indexOf("GameSir-Nova Lite")))continue;else if(n){var a=s(n);n=_(n),n.remappingFor&&(n.index=u++),a?a.lastChecked=t:(n.lastChecked=t,',
     ),
     Patch(
         "select the modern six-axis Linux layout",
